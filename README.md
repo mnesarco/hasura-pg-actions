@@ -19,7 +19,7 @@ mutation CallPgAction {
 }
 ```
 
-## To PosthreSQL functions:
+## To PostgreSQL functions:
 
 ```sql
 CREATE OR REPLACE FUNCTION action_test(id bigint, org text, usr text, request jsonb)
