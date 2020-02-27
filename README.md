@@ -47,3 +47,7 @@ END;
 $func$
 LANGUAGE plpgsql VOLATILE;
 ```
+
+## A picture is worth a thousand words
+
+![ref](https://mnesarco.github.io/images/hasura-action-pg.png)
