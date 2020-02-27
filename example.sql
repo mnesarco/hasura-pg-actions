@@ -1,27 +1,6 @@
-# hasura-pg-actions
-Short script to enable hasura to call postgresql functions (read/write) as mutations.
-
-Please read the reference article: https://mnesarco.github.io/blog/2020/02/25/hasura-postgresql-function-as-mutation
-
-## Map mutations:
-
-```graphql
-mutation CallPgAction {
-  insert_hpga_action_journal(
-    objects: {
-        action_id: "test", 
-        request: { greeting: "Hello " }
-    }) {
-    returning {
-      response
-    }
-  }
-}
-```
-
-## To PosthreSQL functions:
-
-```sql
+-- test example function
+-- request: { name }
+-- result: { greetings }
 CREATE OR REPLACE FUNCTION action_test(id bigint, org text, usr text, request jsonb)
 RETURNS jsonb AS $func$
 DECLARE 
@@ -46,4 +25,6 @@ BEGIN
 END;
 $func$
 LANGUAGE plpgsql VOLATILE;
-```
+
+-- make it accesible from the mutation
+INSERT INTO hpga_action VALUES ('test');

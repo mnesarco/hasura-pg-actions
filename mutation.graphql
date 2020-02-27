@@ -1,0 +1,31 @@
+# Use this mutation if called with admin user with full permissions.
+
+mutation CallPgAction {
+  insert_hpga_action_journal(
+    objects: {
+        action_id: "test", 
+        organization_id: "myorg", 
+        user_id: "me", 
+        request: { greeting: "Hello " }
+    }) {
+    returning {
+      response
+    }
+  }
+}
+
+# Use this mutation if called with a role
+# with permissions like the test role example
+# in metadata.json file.
+
+mutation CallPgAction {
+  insert_hpga_action_journal(
+    objects: {
+        action_id: "test", 
+        request: { greeting: "Hello " }
+    }) {
+    returning {
+      response
+    }
+  }
+}

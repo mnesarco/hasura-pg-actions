@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "tables": [
+    {
+      "table": {
+        "schema": "public",
+        "name": "hpga_action_journal"
+      },
+      "insert_permissions": [
+        {
+          "role": "test",
+          "permission": {
+            "check": {},
+            "set": {
+              "organization_id": "x-hasura-Org-Id",
+              "user_id": "x-hasura-User-Id"
+            },
+            "columns": [
+              "action_id",
+              "request"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
